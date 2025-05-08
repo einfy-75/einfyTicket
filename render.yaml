@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: event-booking-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn ticketing_platform.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: ticketing_platform.settings
+      - key: PYTHON_VERSION
+        value: 3.10
