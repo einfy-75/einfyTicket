@@ -6,11 +6,10 @@ router = DefaultRouter()
 router.register(r'events', EventViewSet, basename='events')
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('book/', book_ticket),
-    path('confirm-payment/', confirm_payment),
-    path('verify/', verify_ticket),
-    path('submit-event-request/', submit_event_request),
-    path('simulate-payment/', simulate_payment),
+    path('', include(router.urls)),  
+    path('submit-event/', submit_event_request, name='submit-event'),
+    path('book-ticket/', book_ticket, name='book-ticket'),
+    path('confirm-payment/', confirm_payment, name='confirm-payment'),
+    path('verify-ticket/', verify_ticket, name='verify-ticket'),
+    path('simulate-payment/', simulate_payment, name='simulate-payment'),
 ]
-

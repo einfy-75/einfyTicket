@@ -15,3 +15,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ticketing_platform.settings')
 
 application = get_wsgi_application()
 
+     

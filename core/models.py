@@ -28,17 +28,14 @@ class Ticket(models.Model):
 
 
 class EventRequest(models.Model):
+    event_name = models.CharField(max_length=255)
     organizer_name = models.CharField(max_length=255)
     email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    event_name = models.CharField(max_length=255)
     description = models.TextField()
     date = models.DateField()
-    venue = models.CharField(max_length=255)
-    expected_attendees = models.PositiveIntegerField()
-    poster = models.ImageField(upload_to='event_requests/')
-    submitted_at = models.DateTimeField(auto_now_add=True)
+    location = models.CharField(max_length=255)
     is_approved = models.BooleanField(default=False)
+    submitted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.event_name} by {self.organizer_name}"
+        return self.event_name
